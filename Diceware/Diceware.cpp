@@ -12,7 +12,7 @@ Diceware::Diceware::Diceware(int numElements, int maxPage, int maxCols, int maxR
 
 std::vector<Diceware::tElement>& Diceware::Diceware::generateElements(void)
 {
-	int i;
+	int i = 0;
 
 	std::random_device rd;   // non-deterministic generator  
     std::mt19937 gen(rd());  // to seed mersenne twister.  

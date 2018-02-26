@@ -4,14 +4,17 @@
 
 void parseOpt(const char* optStr, char** argv, int index, int* number)
 {
-	if(std::strcmp(argv[index], optStr) == 0)
+	if (argv != nullptr && number != nullptr)
 	{
-		try 
+		if(std::strcmp(argv[index], optStr) == 0)
 		{
-			*number = std::stoi(argv[index+1]);
-		}
-		catch (std::exception e)
-		{
+			try 
+			{
+				*number = std::stoi(argv[index+1]);
+			}
+			catch (std::exception& e)
+			{
+			}
 		}
 	}
 }
