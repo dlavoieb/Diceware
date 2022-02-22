@@ -71,13 +71,16 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
       
+    - run: pwd
+      
     - name: Upload Built Executable
+     
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.upload_info.outputs.upload_url }}
-        asset_path: ${{env.GITHUB_WORKSPACE}}\Diceware\Release\Diceware.exe
+        asset_path: Diceware\Release\Diceware.exe
         asset_name: Diceware.exe
         asset_content_type: application/binary
 
