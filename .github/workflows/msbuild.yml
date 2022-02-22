@@ -80,7 +80,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.upload_info.outputs.upload_url }}
-        asset_path: D:\a\Diceware\Diceware\Diceware\Release\Diceware.exe
+        asset_path: Release\Diceware.exe
         asset_name: Diceware.exe
         asset_content_type: application/binary
 
